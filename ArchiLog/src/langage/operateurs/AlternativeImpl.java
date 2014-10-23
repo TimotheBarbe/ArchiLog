@@ -1,6 +1,6 @@
 package langage.operateurs;
 
-public class alternativeImpl implements OperateursInterface {
+public class AlternativeImpl implements OperateursInterface {
 	private OperateursInterface operation1;
 	private OperateursInterface operation2;
 	private Condition condition;
