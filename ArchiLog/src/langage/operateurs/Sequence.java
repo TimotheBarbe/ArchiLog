@@ -1,6 +1,6 @@
 package langage.operateurs;
 
-public class sequence implements OperateursInterface {
+public class Sequence implements OperateursInterface {
 	private OperateursInterface operation1;
 	private OperateursInterface operation2;
 
