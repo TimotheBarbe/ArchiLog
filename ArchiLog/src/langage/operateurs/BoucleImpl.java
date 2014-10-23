@@ -1,6 +1,6 @@
 package langage.operateurs;
 
-public class boucleImpl implements OperateursInterface {
+public class BoucleImpl implements OperateursInterface {
 		private OperateursInterface operation;
 		private Condition condition;
 
