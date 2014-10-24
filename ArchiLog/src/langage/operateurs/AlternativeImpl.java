@@ -1,5 +1,7 @@
 package langage.operateurs;
 
+import langage.conditions.Condition;
+
 public class AlternativeImpl implements OperateursInterface {
 	private OperateursInterface operation1;
 	private OperateursInterface operation2;

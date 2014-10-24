@@ -1,5 +1,7 @@
 package langage.operateurs;
 
+import langage.conditions.Condition;
+
 public class BoucleImpl implements OperateursInterface {
 		private OperateursInterface operation;
 		private Condition condition;
