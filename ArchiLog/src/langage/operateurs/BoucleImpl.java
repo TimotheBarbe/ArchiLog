@@ -8,7 +8,6 @@ public class BoucleImpl implements OperateursInterface {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		while (condition.eval()){
 			operation.run();
 		}
