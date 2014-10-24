@@ -1,6 +1,6 @@
 package langage.conditions;
 
-public class different implements Condition {
+public class Superieur implements Condition {
 
 	private int argument1;
 	private int argument2;
@@ -26,14 +26,15 @@ public class different implements Condition {
 	}
 
 
-	public different(int argument1, int argument2) {
+	public Superieur(int argument1, int argument2) {
 		super();
 		this.argument1 = argument1;
 		this.argument2 = argument2;
 	}
 
 	public boolean eval() {
-		return argument1 != argument2;
+		return argument1 > argument2;
 	}
+
 
 }

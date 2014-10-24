@@ -1,6 +1,6 @@
 package langage.conditions;
 
-public class inferieur implements Condition {
+public class Inferieur implements Condition {
 	private int argument1;
 	private int argument2;
 	
@@ -25,7 +25,7 @@ public class inferieur implements Condition {
 	}
 
 
-	public inferieur(int argument1, int argument2) {
+	public Inferieur(int argument1, int argument2) {
 		super();
 		this.argument1 = argument1;
 		this.argument2 = argument2;
