@@ -2,6 +2,7 @@ package Main;
 
 import java.awt.Point;
 
+import langage.operateurs.*;
 import langage.type.*;
 
 public class Main {
@@ -15,6 +16,7 @@ public class Main {
 		Point[] points = new Point[] { p1, p2, p3 };
 		PolygoneImpl pi = new PolygoneImpl(points);
 		
+		Dessiner d = new Dessiner();
 	}
 
 }
