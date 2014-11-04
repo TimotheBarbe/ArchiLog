@@ -15,8 +15,13 @@ public class Main {
 		Point p3 = new Point(20, 30);
 		Point[] points = new Point[] { p1, p2, p3 };
 		PolygoneImpl pi = new PolygoneImpl(points);
-		
-		Dessiner d = new Dessiner();
-	}
 
+		Crayon cr = new Crayon();
+
+		Dessiner d1 = new Dessiner(c, cr);
+		d1.run();
+
+		Dessiner d2 = new Dessiner(pi, cr);
+		d2.run();
+	}
 }
