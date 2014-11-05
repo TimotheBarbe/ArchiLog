@@ -63,4 +63,26 @@ public class InterpreteurImpl implements InterpreteurInterface {
 		
 	}
 
+	@Override
+	public void etiqueter(String etiquette, Chemin chemin) {
+		String pos="x=\"";		
+		if(chemin instanceof Cercle){
+			pos+= ((Cercle) chemin).getCentre().getX();
+			pos+= "\" y=\"";
+			pos+= ((Cercle) chemin).getCentre().getY();
+		}
+		if(chemin instanceof PolygoneImpl){
+			pos+= ((PolygoneImpl) chemin).getPoints()[0].getX();
+			pos+= "\" y=\"";
+			pos+= ((PolygoneImpl) chemin).getPoints()[0].getY();
+		}
+		if(chemin instanceof BezierImpl){
+			pos+= ((BezierImpl) chemin).getPoints()[0].getX();
+			pos+= "\" y=\"";
+			pos+= ((BezierImpl) chemin).getPoints()[0].getY();
+		}
+		pos+="\"";
+		
+	}
+
 }

@@ -13,4 +13,6 @@ public interface InterpreteurInterface {
 
 	public void inserer(Dessin aInserer);
 
+	public void etiqueter(String etiquette, Chemin chemin);
+
 }
