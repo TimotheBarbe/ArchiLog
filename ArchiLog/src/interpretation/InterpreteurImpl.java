@@ -21,11 +21,12 @@ public class InterpreteurImpl implements InterpreteurInterface {
 		}
 		if (c instanceof PolygoneImpl) {
 			PolygoneImpl p = (PolygoneImpl) c;
-			String liste ="";
-			for(Point pt : p.getPoints()){
-				liste += pt.getX()+","+pt.getY()+" ";
+			String liste = "";
+			for (Point pt : p.getPoints()) {
+				liste += pt.getX() + "," + pt.getY() + " ";
 			}
-			System.out.println("<polygon points=\""+liste+"\" style=\"fill:"+cr.getColor()+";\" />");
+			System.out.println("<polygon points=\"" + liste
+					+ "\" style=\"fill:" + cr.getColor() + ";\" />");
 		}
 
 	}
@@ -42,11 +43,13 @@ public class InterpreteurImpl implements InterpreteurInterface {
 		}
 		if (c instanceof PolygoneImpl) {
 			PolygoneImpl p = (PolygoneImpl) c;
-			String liste ="";
-			for(Point pt : p.getPoints()){
-				liste += pt.getX()+","+pt.getY()+" ";
+			String liste = "";
+			for (Point pt : p.getPoints()) {
+				liste += pt.getX() + "," + pt.getY() + " ";
 			}
-			System.out.println("<polygon points=\""+liste+"\" style=\"fill:none;stroke:"+cr.getColor()+";stroke-width:"+cr.getEpaisseur()+";\" />");
+			System.out.println("<polygon points=\"" + liste
+					+ "\" style=\"fill:none;stroke:" + cr.getColor()
+					+ ";stroke-width:" + cr.getEpaisseur() + ";\" />");
 		}
 		if (c instanceof BezierImpl) {
 			System.out.println("<bezier>");
