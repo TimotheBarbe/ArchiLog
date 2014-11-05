@@ -4,20 +4,12 @@ public class Not implements Condition {
 	private Condition condition;
 	
 	@Override
-	public boolean eval() {
-		return !condition.eval();
+	public boolean eval(int i, int j) {
+		return !condition.eval(i, j);
 	}
 
 	public Not(Condition condition) {
 		super();
-		this.condition = condition;
-	}
-
-	public Condition getCondition() {
-		return condition;
-	}
-
-	public void setCondition(Condition condition) {
 		this.condition = condition;
 	}
 

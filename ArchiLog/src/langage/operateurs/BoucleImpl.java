@@ -6,10 +6,20 @@ import langage.conditions.Condition;
 public class BoucleImpl implements OperateursInterface {
 		private OperateursInterface operation;
 		private Condition condition;
+		private int start;
+		private int end;
+		
+	public BoucleImpl(OperateursInterface operation, Condition condition , int start, int end){
+		this.operation=operation;
+		this.condition=condition;
+		this.start = start;
+		this.end = end;
+		
+	}
 
 	@Override
 	public void run(InterpreteurInterface i) {
-		while (condition.eval()){
+		while (condition.eval(start, end)){
 			operation.run(i);
 		}
 
