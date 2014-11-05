@@ -21,6 +21,7 @@ public class BoucleImpl implements OperateursInterface {
 	public void run(InterpreteurInterface i) {
 		while (condition.eval(start, end)){
 			operation.run(i);
+			start ++;
 		}
 
 	}
