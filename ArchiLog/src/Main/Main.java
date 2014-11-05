@@ -26,7 +26,7 @@ public class Main {
 		PolygoneImpl pi = new PolygoneImpl(points);
 
 		Crayon cr1 = new Crayon();
-		Crayon cr2 = new Crayon(2, Couleur.BLEU);
+		Crayon cr2 = new Crayon(2, Couleur.blue);
 
 		Dessiner d1 = new Dessiner(c, cr1);
 		Dessiner d2 = new Dessiner(pi, cr1);
@@ -35,7 +35,7 @@ public class Main {
 
 		Remplir r1 = new Remplir(pi, cr2);
 		Sequence s2 = new Sequence(s1, r1);
-		
+
 		s2.run(interpreteur);
 
 	}

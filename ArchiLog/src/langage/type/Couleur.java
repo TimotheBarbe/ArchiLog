@@ -1,9 +1,9 @@
 package langage.type;
 
 public enum Couleur {
-	VERT,
-	NOIR,
-	ROUGE,
-	BLEU,
-	BLANC;
+	blue,
+	green,
+	black,
+	white,
+	red;
 }

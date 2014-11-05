@@ -12,7 +12,7 @@ public class Crayon {
 
 	public Crayon() {
 		this.epaisseur = 1;
-		this.color = Couleur.NOIR;
+		this.color = Couleur.black;
 	}
 
 	public String toString() {
