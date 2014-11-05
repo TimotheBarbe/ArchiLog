@@ -5,6 +5,7 @@ import interpretation.InterpreteurInterface;
 
 import java.awt.Point;
 
+import langage.operateurs.Dessin;
 import langage.operateurs.Dessiner;
 import langage.operateurs.Remplir;
 import langage.operateurs.Sequence;
@@ -35,8 +36,10 @@ public class Main {
 
 		Remplir r1 = new Remplir(pi, cr2);
 		Sequence s2 = new Sequence(s1, r1);
+		
+		Dessin dessin = new Dessin(s2);
 
-		s2.run(interpreteur);
+		dessin.run(interpreteur);
 
 	}
 }

@@ -2,6 +2,7 @@ package interpretation;
 
 import java.awt.Point;
 
+import langage.operateurs.Dessin;
 import langage.type.BezierImpl;
 import langage.type.Cercle;
 import langage.type.Chemin;
@@ -54,6 +55,12 @@ public class InterpreteurImpl implements InterpreteurInterface {
 		if (c instanceof BezierImpl) {
 			System.out.println("<bezier>");
 		}
+	}
+
+	@Override
+	public void inserer(Dessin aInserer) {
+		aInserer.run(this);
+		
 	}
 
 }
