@@ -1,5 +1,7 @@
 package langage.operateurs;
 
+import interpretation.InterpreteurInterface;
+
 public class Sequence implements OperateursInterface {
 
 	private OperateursInterface operation1;
@@ -12,9 +14,9 @@ public class Sequence implements OperateursInterface {
 	}
 
 	@Override
-	public void run() {
-		operation1.run();
-		operation2.run();
+	public void run(InterpreteurInterface i) {
+		operation1.run(i);
+		operation2.run(i);
 	}
 
 }

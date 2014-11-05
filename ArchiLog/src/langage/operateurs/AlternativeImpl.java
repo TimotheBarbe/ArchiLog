@@ -1,5 +1,6 @@
 package langage.operateurs;
 
+import interpretation.InterpreteurInterface;
 import langage.conditions.Condition;
 
 public class AlternativeImpl implements OperateursInterface {
@@ -8,13 +9,13 @@ public class AlternativeImpl implements OperateursInterface {
 	private Condition condition;
 
 	@Override
-	public void run() {
+	public void run(InterpreteurInterface i) {
 		// TODO Auto-generated method stub
 		if(condition.eval()){
-			operation1.run();
+			operation1.run(i);
 		}
 		else{
-			operation2.run();
+			operation2.run(i);
 		}
 
 	}

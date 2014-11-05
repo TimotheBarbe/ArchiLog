@@ -1,10 +1,11 @@
 package langage.operateurs;
 
+import interpretation.InterpreteurInterface;
+import langage.type.Cercle;
 import langage.type.Chemin;
 import langage.type.Crayon;
 
 public class Dessiner implements Instruction {
-
 	private Chemin ch;
 	private Crayon cr;
 
@@ -30,8 +31,8 @@ public class Dessiner implements Instruction {
 	}
 
 	@Override
-	public void run() {
-		System.out.println("Dessin :" + this.ch + " en " + this.cr.getColor());
+	public void run(InterpreteurInterface i) {
+		i.dessiner(ch, cr);
 	}
 
 }

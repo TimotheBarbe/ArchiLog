@@ -1,13 +1,22 @@
 package Main;
 
+import interpretation.InterpreteurImpl;
+import interpretation.InterpreteurInterface;
+
 import java.awt.Point;
 
-import langage.operateurs.*;
-import langage.type.*;
+import langage.operateurs.Dessiner;
+import langage.operateurs.Remplir;
+import langage.operateurs.Sequence;
+import langage.type.Cercle;
+import langage.type.Couleur;
+import langage.type.Crayon;
+import langage.type.PolygoneImpl;
 
 public class Main {
 
 	public static void main(String[] args) {
+		InterpreteurInterface interpreteur = new InterpreteurImpl();
 		Point p1 = new Point(50, 50);
 		Cercle c = new Cercle(p1, 20);
 
@@ -26,6 +35,8 @@ public class Main {
 
 		Remplir r1 = new Remplir(pi, cr2);
 		Sequence s2 = new Sequence(s1, r1);
-		s2.run();
+		
+		s2.run(interpreteur);
+
 	}
 }

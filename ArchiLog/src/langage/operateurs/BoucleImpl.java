@@ -1,5 +1,6 @@
 package langage.operateurs;
 
+import interpretation.InterpreteurInterface;
 import langage.conditions.Condition;
 
 public class BoucleImpl implements OperateursInterface {
@@ -7,9 +8,9 @@ public class BoucleImpl implements OperateursInterface {
 		private Condition condition;
 
 	@Override
-	public void run() {
+	public void run(InterpreteurInterface i) {
 		while (condition.eval()){
-			operation.run();
+			operation.run(i);
 		}
 
 	}

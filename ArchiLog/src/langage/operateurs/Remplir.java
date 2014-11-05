@@ -1,5 +1,6 @@
 package langage.operateurs;
 
+import interpretation.InterpreteurInterface;
 import langage.type.CheminFerme;
 import langage.type.Crayon;
 
@@ -15,7 +16,7 @@ public class Remplir implements Instruction {
 	}
 
 	@Override
-	public void run() {
+	public void run(InterpreteurInterface i) {
 		System.out.println("Remplissage : " + this.chf + " en "
 				+ this.cr.getColor());
 	}
