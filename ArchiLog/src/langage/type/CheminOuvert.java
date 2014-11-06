@@ -1,6 +1,8 @@
 package langage.type;
 
 /**
+ * Un chemin ouvert est un chemin qui n'est pas fermé !
+ * 
  * @author Timothé Barbe et Christophe Comoretto
  * 
  */

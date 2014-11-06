@@ -48,8 +48,8 @@ public class Main {
 		Dessin dessin = new Dessin(s3);
 
 		// INTERPRETEUR 1
-//		InterpreteurInterface interpreteurC = new InterpreteurConsole();
-//		dessin.run(interpreteurC);
+		InterpreteurInterface interpreteurC = new InterpreteurConsole();
+		dessin.run(interpreteurC);
 
 		// INTERPRETEUR 2
 		String path = "C:/Users/Timothé/Desktop/exemple.html";
