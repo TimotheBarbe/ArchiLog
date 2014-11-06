@@ -117,19 +117,21 @@ public class InterpreteurSVG implements InterpreteurInterface {
 	private void ecrire(String s) {
 		{
 			try {
+				// Creation du fichier s'il n'exite pas
 				File file = new File(this.path);
 				FileWriter fw = new FileWriter(this.path, true);
 				BufferedWriter output = new BufferedWriter(fw);
 
+				// Si le fichier est vide, ajout de la balise svg
 				InputStream ips = new FileInputStream(this.path);
 				InputStreamReader ipsr = new InputStreamReader(ips);
 				BufferedReader br = new BufferedReader(ipsr);
-
 				if (br.readLine() == null) {
 					output.write("<svg height=\"300\" width=\"300\">");
 				}
-
 				br.close();
+
+				// Ecriture de la ligne
 				output.write(s + "\n");
 				output.flush();
 				output.close();
