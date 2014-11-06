@@ -2,6 +2,7 @@ package Main;
 
 import interpretation.InterpreteurConsole;
 import interpretation.InterpreteurInterface;
+import interpretation.InterpreteurSVG;
 
 import java.awt.Point;
 
@@ -18,7 +19,6 @@ import langage.type.PolygoneImpl;
 public class Main {
 
 	public static void main(String[] args) {
-		InterpreteurInterface interpreteur = new InterpreteurConsole();
 		Point p1 = new Point(50, 50);
 		Cercle c = new Cercle(p1, 20);
 
@@ -46,7 +46,15 @@ public class Main {
 		Sequence s3 = new Sequence(s2, d3);
 
 		Dessin dessin = new Dessin(s3);
-		dessin.run(interpreteur);
+
+		// INTERPRETEUR 1
+		InterpreteurInterface interpreteurC = new InterpreteurConsole();
+		dessin.run(interpreteurC);
+
+		// INTERPRETEUR 2
+		String path = "C:/Users/Timothé/Desktop/exemple.html";
+		InterpreteurInterface interpreteurSVG = new InterpreteurSVG(path);
+		dessin.run(interpreteurSVG);
 
 	}
 }
