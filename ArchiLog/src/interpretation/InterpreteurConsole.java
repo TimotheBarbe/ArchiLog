@@ -10,7 +10,7 @@ import langage.type.CheminFerme;
 import langage.type.Crayon;
 import langage.type.PolygoneImpl;
 
-public class InterpreteurImpl implements InterpreteurInterface {
+public class InterpreteurConsole implements InterpreteurInterface {
 
 	@Override
 	public void remplissage(CheminFerme c, Crayon cr) {
@@ -53,36 +53,46 @@ public class InterpreteurImpl implements InterpreteurInterface {
 					+ ";stroke-width:" + cr.getEpaisseur() + ";\" />");
 		}
 		if (c instanceof BezierImpl) {
-			System.out.println("<bezier>");
+			BezierImpl bz = (BezierImpl) c;
+			String rep = "<path d=\"";
+			switch (bz.getPoints().length) {
+			case 2:
+				rep += "M " + bz.getPoints()[0].x + " " + bz.getPoints()[0].y
+						+ " L " + bz.getPoints()[1].x + " "
+						+ bz.getPoints()[1].y;
+				break;
+			}
+			rep += "\" stroke=\"" + cr.getColor() + "\" stroke-width=\""
+					+ cr.getEpaisseur() + "\"/>";
+			System.out.println(rep);
 		}
 	}
 
 	@Override
 	public void inserer(Dessin aInserer) {
 		aInserer.run(this);
-		
 	}
 
 	@Override
 	public void etiqueter(String etiquette, Chemin chemin) {
-		String pos="x=\"";		
-		if(chemin instanceof Cercle){
-			pos+= ((Cercle) chemin).getCentre().getX();
-			pos+= "\" y=\"";
-			pos+= ((Cercle) chemin).getCentre().getY();
+		String pos = "x=\"";
+		if (chemin instanceof Cercle) {
+			pos += ((Cercle) chemin).getCentre().getX();
+			pos += "\" y=\"";
+			pos += ((Cercle) chemin).getCentre().getY();
 		}
-		if(chemin instanceof PolygoneImpl){
-			pos+= ((PolygoneImpl) chemin).getPoints()[0].getX();
-			pos+= "\" y=\"";
-			pos+= ((PolygoneImpl) chemin).getPoints()[0].getY();
+		if (chemin instanceof PolygoneImpl) {
+			pos += ((PolygoneImpl) chemin).getPoints()[0].getX();
+			pos += "\" y=\"";
+			pos += ((PolygoneImpl) chemin).getPoints()[0].getY();
 		}
-		if(chemin instanceof BezierImpl){
-			pos+= ((BezierImpl) chemin).getPoints()[0].getX();
-			pos+= "\" y=\"";
-			pos+= ((BezierImpl) chemin).getPoints()[0].getY();
+		if (chemin instanceof BezierImpl) {
+			pos += ((BezierImpl) chemin).getPoints()[0].getX();
+			pos += "\" y=\"";
+			pos += ((BezierImpl) chemin).getPoints()[0].getY();
 		}
-		pos+="\"";
-		
+		pos += "\"";
+		System.out.println("<text" + pos + ">" + etiquette + "</text>");
 	}
 
 }

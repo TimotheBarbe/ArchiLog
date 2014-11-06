@@ -1,6 +1,6 @@
 package Main;
 
-import interpretation.InterpreteurImpl;
+import interpretation.InterpreteurConsole;
 import interpretation.InterpreteurInterface;
 
 import java.awt.Point;
@@ -9,6 +9,7 @@ import langage.operateurs.Dessin;
 import langage.operateurs.Dessiner;
 import langage.operateurs.Remplir;
 import langage.operateurs.Sequence;
+import langage.type.BezierImpl;
 import langage.type.Cercle;
 import langage.type.Couleur;
 import langage.type.Crayon;
@@ -17,13 +18,15 @@ import langage.type.PolygoneImpl;
 public class Main {
 
 	public static void main(String[] args) {
-		InterpreteurInterface interpreteur = new InterpreteurImpl();
+		InterpreteurInterface interpreteur = new InterpreteurConsole();
 		Point p1 = new Point(50, 50);
 		Cercle c = new Cercle(p1, 20);
 
 		Point p2 = new Point(50, 30);
 		Point p3 = new Point(20, 30);
-		Point[] points = new Point[] { p1, p2, p3 };
+		Point p4 = new Point(12, 60);
+		Point p5 = new Point(80, 72);
+		Point[] points = new Point[] { p1, p2, p3, p4 };
 		PolygoneImpl pi = new PolygoneImpl(points);
 
 		Crayon cr1 = new Crayon();
@@ -36,9 +39,12 @@ public class Main {
 
 		Remplir r1 = new Remplir(pi, cr2);
 		Sequence s2 = new Sequence(s1, r1);
-		
-		Dessin dessin = new Dessin(s2);
 
+		BezierImpl bz = new BezierImpl(p4, p5);
+		Dessiner d3 = new Dessiner(bz, cr1);
+		Sequence s3 = new Sequence(s2, d3);
+
+		Dessin dessin = new Dessin(s3);
 		dessin.run(interpreteur);
 
 	}
