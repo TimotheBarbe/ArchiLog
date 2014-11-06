@@ -26,6 +26,7 @@ public class Main {
 		Point p3 = new Point(20, 30);
 		Point p4 = new Point(12, 60);
 		Point p5 = new Point(80, 72);
+		Point p6 = new Point(12, 90);
 		Point[] points = new Point[] { p1, p2, p3, p4 };
 		PolygoneImpl pi = new PolygoneImpl(points);
 
@@ -40,8 +41,8 @@ public class Main {
 		Remplir r1 = new Remplir(pi, cr2);
 		Sequence s2 = new Sequence(s1, r1);
 
-		BezierImpl bz = new BezierImpl(p4, p5);
-		Dessiner d3 = new Dessiner(bz, cr1);
+		BezierImpl bz = new BezierImpl(p4, p5, p6);
+		Dessiner d3 = new Dessiner(bz, cr2);
 		Sequence s3 = new Sequence(s2, d3);
 
 		Dessin dessin = new Dessin(s3);
