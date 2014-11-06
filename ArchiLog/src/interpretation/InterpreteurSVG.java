@@ -1,10 +1,14 @@
 package interpretation;
 
 import java.awt.Point;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import langage.operateurs.Dessin;
 import langage.type.BezierImpl;
@@ -116,6 +120,16 @@ public class InterpreteurSVG implements InterpreteurInterface {
 				File file = new File(this.path);
 				FileWriter fw = new FileWriter(this.path, true);
 				BufferedWriter output = new BufferedWriter(fw);
+
+				InputStream ips = new FileInputStream(this.path);
+				InputStreamReader ipsr = new InputStreamReader(ips);
+				BufferedReader br = new BufferedReader(ipsr);
+
+				if (br.readLine() == null) {
+					output.write("<svg height=\"300\" width=\"300\">");
+				}
+
+				br.close();
 				output.write(s + "\n");
 				output.flush();
 				output.close();
