@@ -127,7 +127,7 @@ public class InterpreteurSVG implements InterpreteurInterface {
 				InputStreamReader ipsr = new InputStreamReader(ips);
 				BufferedReader br = new BufferedReader(ipsr);
 				if (br.readLine() == null) {
-					output.write("<svg height=\"300\" width=\"300\">");
+					output.write("<svg height=\"300\" width=\"300\">\n");
 				}
 				br.close();
 
