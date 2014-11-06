@@ -1,5 +1,9 @@
 package langage.conditions;
 
+/**
+ * @author Timothé Barbe et Christophe Comoretto
+ * 
+ */
 public class Not implements Condition {
 	private Condition condition;
 	

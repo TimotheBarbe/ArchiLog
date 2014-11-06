@@ -1,6 +1,9 @@
 package langage.conditions;
 
-// A Implémenter /* modif test 2*/
+/**
+ * @author Timothé Barbe et Christophe Comoretto
+ * 
+ */
 public interface Condition {
 
 	public boolean eval(int i , int j);

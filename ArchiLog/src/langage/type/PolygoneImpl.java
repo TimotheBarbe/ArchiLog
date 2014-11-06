@@ -1,5 +1,9 @@
 package langage.type;
 
+/**
+ * @author Timothé Barbe et Christophe Comoretto
+ * 
+ */
 import java.awt.Point;
 import java.util.Arrays;
 

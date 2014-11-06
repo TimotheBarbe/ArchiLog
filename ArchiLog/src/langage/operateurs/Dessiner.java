@@ -5,6 +5,10 @@ import langage.type.Cercle;
 import langage.type.Chemin;
 import langage.type.Crayon;
 
+/**
+ * @author Timothé Barbe et Christophe Comoretto
+ * 
+ */
 public class Dessiner implements Instruction {
 	private Chemin ch;
 	private Crayon cr;

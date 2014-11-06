@@ -2,6 +2,10 @@ package langage.type;
 
 import java.awt.Point;
 
+/**
+ * @author Timothé Barbe et Christophe Comoretto
+ * 
+ */
 public class BezierImpl implements CheminOuvert {
 
 	private Point points[];

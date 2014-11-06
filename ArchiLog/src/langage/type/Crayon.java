@@ -1,5 +1,9 @@
 package langage.type;
 
+/**
+ * @author Timothé Barbe et Christophe Comoretto
+ * 
+ */
 public class Crayon {
 
 	private double epaisseur;

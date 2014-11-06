@@ -3,6 +3,10 @@ package langage.operateurs;
 import interpretation.InterpreteurInterface;
 import langage.conditions.Condition;
 
+/**
+ * @author Timothé Barbe et Christophe Comoretto
+ * 
+ */
 public class BoucleImpl implements OperateursInterface {
 		private OperateursInterface operation;
 		private Condition condition;

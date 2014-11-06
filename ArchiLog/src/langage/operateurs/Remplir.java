@@ -4,6 +4,10 @@ import interpretation.InterpreteurInterface;
 import langage.type.CheminFerme;
 import langage.type.Crayon;
 
+/**
+ * @author Timothé Barbe et Christophe Comoretto
+ * 
+ */
 public class Remplir implements Instruction {
 
 	private CheminFerme chf;

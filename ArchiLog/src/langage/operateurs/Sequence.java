@@ -2,6 +2,10 @@ package langage.operateurs;
 
 import interpretation.InterpreteurInterface;
 
+/**
+ * @author Timothé Barbe et Christophe Comoretto
+ * 
+ */
 public class Sequence implements OperateursInterface {
 
 	private OperateursInterface operation1;

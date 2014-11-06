@@ -10,9 +10,12 @@ import langage.type.CheminFerme;
 import langage.type.Crayon;
 import langage.type.PolygoneImpl;
 
+/**
+ * @author Timothé Barbe et Christophe Comoretto
+ * 
+ */
 public class InterpreteurConsole implements InterpreteurInterface {
 
-	@Override
 	public void remplissage(CheminFerme c, Crayon cr) {
 		if (c instanceof Cercle) {
 			Cercle ce = (Cercle) c;
