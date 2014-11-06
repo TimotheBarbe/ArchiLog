@@ -5,10 +5,12 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import langage.operateurs.Dessin;
 import langage.type.BezierImpl;
@@ -119,20 +121,30 @@ public class InterpreteurSVG implements InterpreteurInterface {
 			try {
 				// Creation du fichier s'il n'exite pas
 				File file = new File(this.path);
-				FileWriter fw = new FileWriter(this.path, true);
-				BufferedWriter output = new BufferedWriter(fw);
+				file.createNewFile();
+				
+				// Lecture
+				BufferedReader br = new BufferedReader(
+						new FileReader(this.path));
 
-				// Si le fichier est vide, ajout de la balise svg
-				InputStream ips = new FileInputStream(this.path);
-				InputStreamReader ipsr = new InputStreamReader(ips);
-				BufferedReader br = new BufferedReader(ipsr);
-				if (br.readLine() == null) {
-					output.write("<svg height=\"300\" width=\"300\">\n");
+				ArrayList<String> old = new ArrayList<String>();
+				String ligne;
+				while ((ligne = br.readLine()) != null) {
+					old.add(ligne);
 				}
 				br.close();
 
-				// Ecriture de la ligne
-				output.write(s + "\n");
+				String rep = "<svg height=\"300\" width=\"300\">\n";
+				for (int i = 1; i < old.size() - 1; i++) {
+					rep += old.get(i) + "\n";
+				}
+				rep += s + "\n";
+				rep += "</svg>";
+
+				// Ecriture
+				FileWriter fw = new FileWriter(this.path);
+				BufferedWriter output = new BufferedWriter(fw);
+				output.write(rep);
 				output.flush();
 				output.close();
 			} catch (IOException ioe) {
