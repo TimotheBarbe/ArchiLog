@@ -8,6 +8,7 @@ import java.awt.Point;
 
 import langage.operateurs.Dessin;
 import langage.operateurs.Dessiner;
+import langage.operateurs.Etiqueter;
 import langage.operateurs.Remplir;
 import langage.operateurs.Sequence;
 import langage.type.BezierImpl;
@@ -45,7 +46,12 @@ public class Main {
 		Dessiner d3 = new Dessiner(bz, cr2);
 		Sequence s3 = new Sequence(s2, d3);
 
-		Dessin dessin = new Dessin(s3);
+		Etiqueter e = new Etiqueter("Ceci est une etiquette", bz);
+		Sequence s4 = new Sequence(s3, e);
+		
+		Dessin dessin = new Dessin(s4);
+		
+
 
 		// INTERPRETEUR 1
 		InterpreteurInterface interpreteurC = new InterpreteurConsole();

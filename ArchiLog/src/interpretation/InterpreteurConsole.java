@@ -68,7 +68,7 @@ public class InterpreteurConsole implements InterpreteurInterface {
 				rep += "M " + bz.getPoints()[0].x + " " + bz.getPoints()[0].y
 						+ " Q " + bz.getPoints()[1].x + " "
 						+ bz.getPoints()[1].y + " " + bz.getPoints()[2].x + " "
-						+ bz.getPoints()[2].y + " \" fill=\"none\"";
+						+ bz.getPoints()[2].y + " \" fill=\"none";
 				break;
 			}
 			rep += "\" stroke=\"" + cr.getColor() + "\" stroke-width=\""
@@ -101,7 +101,7 @@ public class InterpreteurConsole implements InterpreteurInterface {
 			pos += ((BezierImpl) chemin).getPoints()[0].getY();
 		}
 		pos += "\"";
-		System.out.println("<text" + pos + ">" + etiquette + "</text>");
+		System.out.println("<text " + pos + ">" + etiquette + "</text>");
 	}
 
 }
